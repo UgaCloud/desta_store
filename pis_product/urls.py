@@ -18,7 +18,7 @@ from pis_product.views import StockOutListView
 from pis_product.views import ProductUpdateView
 from pis_product.views import StockInUpdateView
 
-from pis_product.logs_view import DailyStockLogs, MonthlyStockLogs
+from pis_product.logs_view import DailyStockLogs, MonthlyStockLogs,BetweenDatesStockLogs
 
 
 urlpatterns = [
@@ -43,4 +43,5 @@ urlpatterns = [
     # Logs
     re_path(r'^stock/logs/daily/$', DailyStockLogs.as_view(),name='daily_stock_logs'),
     re_path(r'^stock/logs/monthly/$', MonthlyStockLogs.as_view(),name='monthly_stock_logs'),
+    re_path(r'^stock/logs/between_dates_log/$', BetweenDatesStockLogs.as_view(),name='between_dates_logs'),
 ]
